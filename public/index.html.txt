@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Dr. Israa | Family Doctor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f7f9;
+  direction:rtl;
+}
+header{
+  background:#0a9396;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+}
+nav button{
+  margin:5px;
+  padding:8px 14px;
+  border:none;
+  cursor:pointer;
+}
+section{
+  max-width:900px;
+  margin:auto;
+  padding:30px;
+}
+h2{ color:#0a9396; }
+.card{
+  background:#fff;
+  padding:20px;
+  margin:15px 0;
+  border-radius:8px;
+}
+input,select,button{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+}
+button{
+  background:#0a9396;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+footer{
+  text-align:center;
+  padding:15px;
+  background:#ddd;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 id="title">Dr. Israa</h1>
+  <p id="subtitle">طبيبة أسرة – رعاية صحية شاملة</p>
+  <nav>
+    <button onclick="setLang('ar')">عربي</button>
+    <button onclick="setLang('nl')">Nederlands</button>
+  </nav>
+</header>
+
+<section>
+  <div class="card" id="about">
+    <h2>عن الطبيبة</h2>
+    <p>
+      د. إسراء – طبيبة أسرة تقدم استشارات طبية أونلاين
+      ومتابعة شاملة للحالات الصحية.
+    </p>
+  </div>
+
+  <div class="card" id="services">
+    <h2>الخدمات</h2>
+    <ul>
+      <li>استشارات طب الأسرة</li>
+      <li>متابعة الأمراض المزمنة</li>
+      <li>وصفات طبية</li>
+      <li>استشارات أونلاين</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 id="bookingTitle">حجز موعد أونلاين</h2>
+    <form onsubmit="book(event)">
+      <input type="text" placeholder="الاسم الكامل" required>
+      <input type="tel" placeholder="رقم الهاتف" required>
+      <input type="email" placeholder="البريد الإلكتروني" required>
+      <input type="date" required>
+      <select required>
+        <option>09:00</option>
+        <option>10:00</option>
+        <option>11:00</option>
+        <option>12:00</option>
+        <option>13:00</option>
+        <option>14:00</option>
+        <option>15:00</option>
+        <option>16:00</option>
+        <option>17:00</option>
+      </select>
+      <button type="submit">تأكيد الحجز</button>
+    </form>
+    <p id="msg"></p>
+  </div>
+
+  <div class="card" id="contact">
+    <h2>التواصل</h2>
+    <p>📍 Sint-Niklaas – Belgium</p>
+    <p>📞 0032467610359</p>
+    <p>✉️ rokanoon20@gmail.com</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Dr. Israa – All Rights Reserved
+</footer>
+
+<script>
+function book(e){
+  e.preventDefault();
+  document.getElementById("msg").innerText =
+  "✅ تم إرسال طلب الحجز بنجاح، سيتم التواصل معك.";
+}
+
+function setLang(lang){
+  if(lang==="nl"){
+    document.body.dir="ltr";
+    title.innerText="Dr. Israa";
+    subtitle.innerText="Family Doctor – Online Consultations";
+    about.innerHTML="<h2>About</h2><p>Family doctor offering online medical consultations.</p>";
+    services.innerHTML="<h2>Services</h2><ul><li>Family medicine</li><li>Chronic follow-up</li><li>Prescriptions</li><li>Online consultations</li></ul>";
+    bookingTitle.innerText="Book Online Appointment";
+    contact.innerHTML="<h2>Contact</h2><p>📍 Sint-Niklaas – Belgium</p><p>📞 0032467610359</p><p>✉️ rokanoon20@gmail.com</p>";
+  } else {
+    location.reload();
+  }
+}
+</script>
+
+</body>
+</html>
